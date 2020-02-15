@@ -1,5 +1,5 @@
 # Accounting
-quick and lightweight app for Accounting.
+quick and lightweight app for Accounting. (+ keylogger)
 
 Point:
 * quick & lightweight
