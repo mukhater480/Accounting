@@ -8,3 +8,5 @@ Point:
 * cross platform
 * with DB (mongoDB)
 * support from farsi language (فارسی)
+---
+use require.txt for packages in this project
