@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font as tk_font
 from PIL import Image, ImageTk
+import time
 
 
 class Main:
@@ -56,7 +57,7 @@ class Main:
 
         # buttons color:
         bg = "black"
-        fg = "yellow"
+        fg = "#ffff99"
 
         # font of buttons:
         font = tk_font.Font(size=16)
@@ -79,6 +80,16 @@ class Main:
                                 bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         info_button.place(x=x, y=y + 180)
         info_button.bind("<Button-1>", self.info_window)
+
+        # date:
+
+        # font of date:
+        font = tk_font.Font(size=21)
+
+        date = time.strftime("%a - %d / %b / %Y")
+        label_date = tk.Label(self.root, font=font, text=date,
+                              bg="#ffff99", fg="#663300")
+        label_date.place(x=self.width, y=0, anchor="ne")
 
     def accounting_window(self, event):
         self.destroy()  # remove this window

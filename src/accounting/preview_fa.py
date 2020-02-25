@@ -35,8 +35,6 @@ class PreviewFa:
 
     def add_widgets(self):
         # size of gif is: width=189, height=24, frames=12
-        img_width = 189
-        img_height = 24
 
         # get all frame of gif:
         frames = [tk.PhotoImage(file=PreviewFa.image_path + "preview.gif",
@@ -50,12 +48,13 @@ class PreviewFa:
             index += 1
             if index > 11:
                 index = 0
-            label_img.after(33, update, index)
+            label_img.after(35, update, index)
 
         # image:
         label_img = tk.Label(self.root)
-        label_img.place(x=int(self.width / 2 - img_width / 2),
-                        y=int(self.height / 2 - img_height / 2))
+        label_img.place(x=self.width / 2,
+                        y=self.height / 2,
+                        anchor="center")
         update(0)
 
         # text:
@@ -63,8 +62,9 @@ class PreviewFa:
 
         label_text = tk.Label(self.root, text="...در حال بارگیری",
                               fg="yellow", bg="black", font=font)
-        label_text.place(x=int(self.width / 2 - img_width / 2) + 4,
-                         y=int(self.height / 2 - img_height / 2) - 50)
+        label_text.place(x=self.width / 2,
+                         y=(self.height / 2) - 50,
+                         anchor="center")
 
     def show(self):
         self.root.deiconify()  # show window

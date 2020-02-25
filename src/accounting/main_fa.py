@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font as tk_font
 from PIL import Image, ImageTk
+import jdatetime
 
 
 class MainFa:
@@ -56,7 +57,7 @@ class MainFa:
 
         # buttons color:
         bg = "black"
-        fg = "yellow"
+        fg = "#ffff99"
 
         # font of buttons:
         font = tk_font.Font(size=16)
@@ -79,6 +80,17 @@ class MainFa:
                                 bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         info_button.place(x=x, y=y + 180, anchor="e")  # anchor="e" for setting to right layout(farsi)
         info_button.bind("<Button-1>", self.info_window)
+
+        # date:
+
+        # font of date:
+        font = tk_font.Font(size=21)
+
+        jdatetime.set_locale("Persian_Iran")
+        date = jdatetime.datetime.now().strftime("%a - %d / %b / %Y")
+        label_date = tk.Label(self.root, font=font, text=date,
+                              bg="#ffff99", fg="#663300")
+        label_date.place(x=0, y=0, anchor="nw")
 
     def accounting_window(self, event):
         self.destroy()  # remove this window
