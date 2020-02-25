@@ -60,17 +60,17 @@ class Main:
         y = 75
 
         accounting_button = tk.Button(self.root, text="Accounting",
-                                      bg=bg, fg=fg, font=font, cursor="hand2")
+                                      bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         accounting_button.place(x=x, y=y)
         accounting_button.bind("<Button-1>", self.accounting_window)
 
         lang_button = tk.Button(self.root, text="Languages",
-                                bg=bg, fg=fg, font=font, cursor="hand2")
+                                bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         lang_button.place(x=x, y=y + 90)
         lang_button.bind("<Button-1>", self.lang_window)
 
         info_button = tk.Button(self.root, text="App information",
-                                bg=bg, fg=fg, font=font, cursor="hand2")
+                                bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         info_button.place(x=x, y=y + 180)
         info_button.bind("<Button-1>", self.info_window)
 

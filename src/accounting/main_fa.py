@@ -60,17 +60,17 @@ class MainFa:
         y = 75
 
         accounting_button = tk.Button(self.root, text="حسابداری",
-                                      bg=bg, fg=fg, font=font, cursor="hand2")
+                                      bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         accounting_button.place(x=x, y=y, anchor="e")  # anchor="e" for setting to right layout(farsi)
         accounting_button.bind("<Button-1>", self.accounting_window)
 
         lang_button = tk.Button(self.root, text="زبان ها",
-                                bg=bg, fg=fg, font=font, cursor="hand2")
+                                bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         lang_button.place(x=x, y=y + 90, anchor="e")  # anchor="e" for setting to right layout(farsi)
         lang_button.bind("<Button-1>", self.lang_window)
 
         info_button = tk.Button(self.root, text="اطلاعات برنامه",
-                                bg=bg, fg=fg, font=font, cursor="hand2")
+                                bg=bg, fg=fg, font=font, cursor="hand2", width=15)
         info_button.place(x=x, y=y + 180, anchor="e")  # anchor="e" for setting to right layout(farsi)
         info_button.bind("<Button-1>", self.info_window)
 
