@@ -10,6 +10,9 @@ class MainFa:
 
     def __init__(self):
         self.root = tk.Toplevel()
+
+        self.hide()  # at first start this window is hidden
+
         self.root.title("صفحه اصلی")  # title of window
         self.root.iconbitmap("img/icon-1.ico")  # set icon for window
         self.root.resizable(False, False)  # can't to resize window
@@ -19,7 +22,7 @@ class MainFa:
 
         # add details:
         self.set_position(self.width, self.height)  # setting this window on center of screen
-        self.set_widgets()  # adding images on window
+        self.add_widgets()  # adding widgets on window
 
         # background color of window:
         self.root.configure(bg=self.background_color)
@@ -34,9 +37,12 @@ class MainFa:
         x = int((width_screen / 2) - (width / 2))
         y = int((height_screen / 2) - (height / 2))
 
+        # when client wants to click close button on top bar:
+        self.root.protocol("WM_DELETE_WINDOW", self.on_quit)
+
         self.root.geometry("%sx%s+%s+%s" % (width, height, x, y))
 
-    def set_widgets(self):
+    def add_widgets(self):
         # size of background-image is: width=1000, height=600
         pil_img = Image.open("img/main-image.jpg")
         img = ImageTk.PhotoImage(pil_img)
@@ -80,7 +86,10 @@ class MainFa:
 
     def lang_window(self, event):
         self.hide()  # hide this window
-        pass
+
+        from lang_fa import LangFa
+        lang = LangFa(self.root)  # show language window
+        lang.root.focus_force()  # focus on languages window
 
     def info_window(self, event):
         self.hide()  # hide this window
@@ -95,7 +104,7 @@ class MainFa:
     def destroy(self):
         self.root.destroy()  # destroy window
 
-
-if __name__ == "__main__":
-    m = MainFa()
-    m.root.mainloop()
+    def on_quit(self):
+        self.destroy()
+        import sys
+        sys.exit(3)

@@ -63,8 +63,8 @@ class Preview:
 
         label_text = tk.Label(self.root, text="Loading...",
                               fg="yellow", bg="black", font=font)
-        label_text.place(x=int(self.width / 2 - 189 / 2) + 40,
-                         y=int(self.height / 2 - 24 / 2) - 50)
+        label_text.place(x=int(self.width / 2 - img_width / 2) + 40,
+                         y=int(self.height / 2 - img_height / 2) - 50)
 
     def show(self):
         self.root.deiconify()  # show window
