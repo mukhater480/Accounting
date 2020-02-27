@@ -86,7 +86,7 @@ class MainFa:
         # font of date:
         font = tk_font.Font(size=21)
 
-        jdatetime.set_locale("Persian_Iran")
+        jdatetime.set_locale("Persian_Iran")  # set to farsi!
         date = jdatetime.datetime.now().strftime("%a - %d / %b / %Y")
         label_date = tk.Label(self.root, font=font, text=date,
                               bg="#ffff99", fg="#663300")
@@ -105,7 +105,10 @@ class MainFa:
 
     def info_window(self, event):
         self.hide()  # hide this window
-        pass
+
+        from app_info_fa import AppInfoFa
+        app_info = AppInfoFa(self.root)  # show app information window
+        app_info.root.focus_force()  # focus on app information window
 
     def show(self):
         self.root.deiconify()  # show window

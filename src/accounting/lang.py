@@ -60,11 +60,15 @@ class Lang:
         farsi_button = tk.Button(self.root, text="فارسی", font=font,
                                  width=10, cursor="hand2")
         farsi_button.place(x=100, y=180)
-        farsi_button.bind("<Button-1>", self.change_lang)
+        farsi_button.bind("<Button-1>", self._change_lang)
 
-    def change_lang(self, event):
-        self.root.destroy()  # remove this window
+    def _change_lang(self, event):  # _methodName means protected method (just for programmer)
         self.parent.destroy()  # remove root window
+        self.root.destroy()  # remove this window
+
+        from main_fa import MainFa
+        main_window = MainFa()  # change main window to farsi language
+        main_window.show()  # show main window
 
         # change setting.config:
         setting = {"lang": "fa"}
@@ -72,10 +76,6 @@ class Lang:
 
         with open("config/setting.config", 'w') as F:
             F.write(setting)
-
-        from main_fa import MainFa
-        main_window = MainFa()  # change main window to farsi language
-        main_window.show()  # show main window
 
     def show(self):
         self.root.deiconify()  # show window

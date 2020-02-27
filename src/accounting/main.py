@@ -104,7 +104,10 @@ class Main:
 
     def info_window(self, event):
         self.hide()  # hide this window
-        pass
+
+        from app_info import AppInfo
+        app_info = AppInfo(self.root)  # show app information window
+        app_info.root.focus_force()  # focus on app information window
 
     def show(self):
         self.root.deiconify()  # show window
