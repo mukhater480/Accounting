@@ -50,25 +50,31 @@ class AppInfoFa(Lang):
         # links:
 
         email = tk.Label(self.root, text="aryanbadiee333@gmail.com",
-                         bg="black", fg="#ff99ff",
+                         bg="black", fg="#ff4dff",
                          font=font, cursor="hand2")
         email.bind("<Button-1>", lambda event: webbrowser.open_new("mailto:aryanbadiee333@gmail.com"))
+        email.bind("<Enter>", lambda event: email.configure(fg="#66a3ff"))
+        email.bind("<Leave>", lambda event: email.configure(fg="#ff4dff"))
         email.place(x=275,
-                    y=220,
+                    y=210,
                     anchor="center")
 
         github = tk.Label(self.root, text="github.com/aryanbadiee",
-                          bg="black", fg="#ff99ff",
+                          bg="black", fg="#ff4dff",
                           font=font, cursor="hand2")
         github.bind("<Button-1>", lambda event: webbrowser.open_new("https://www.github.com/aryanbadiee"))
+        github.bind("<Enter>", lambda event: github.configure(fg="#66a3ff"))
+        github.bind("<Leave>", lambda event: github.configure(fg="#ff4dff"))
         github.place(x=275,
-                     y=250,
+                     y=240,
                      anchor="center")
 
         instagram = tk.Label(self.root, text="instagram.com/aryanbadiee",
-                             bg="black", fg="#ff99ff",
+                             bg="black", fg="#ff4dff",
                              font=font, cursor="hand2")
         instagram.bind("<Button-1>", lambda event: webbrowser.open_new("https://www.instagram.com/aryanbadiee/"))
+        instagram.bind("<Enter>", lambda event: instagram.configure(fg="#66a3ff"))
+        instagram.bind("<Leave>", lambda event: instagram.configure(fg="#ff4dff"))
         instagram.place(x=275,
-                        y=280,
+                        y=270,
                         anchor="center")

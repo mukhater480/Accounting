@@ -92,7 +92,7 @@ class Main:
         label_date.place(x=self.width, y=0, anchor="ne")
 
     def accounting_window(self, event):
-        self.destroy()  # remove this window
+        self.hide()  # hide this window
         pass
 
     def lang_window(self, event):

@@ -19,7 +19,7 @@ if __name__ == "__main__":
     setting = json.loads(data)
 
     root = tk.Tk()
-    root.overrideredirect(1)
+    root.overrideredirect(1)  # remove window bar on top
     root.withdraw()  # hide window
 
     if setting["lang"] == "fa":
@@ -32,7 +32,8 @@ if __name__ == "__main__":
             main_window = MainFa()
         else:
             main_window = Main()
-        time.sleep(3)  # do something
+
+        time.sleep(2)  # do something
 
         preview_window.destroy()  # delete preview window
 
