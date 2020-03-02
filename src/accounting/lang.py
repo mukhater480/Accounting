@@ -64,7 +64,7 @@ class Lang:
 
     def _change_lang(self, event):  # _methodName means protected method (just for programmer)
         self.parent.destroy()  # remove root window
-        self.root.destroy()  # remove this window
+        self.destroy()  # remove this window
 
         from main_fa import MainFa
         main_window = MainFa()  # change main window to farsi language
@@ -89,4 +89,4 @@ class Lang:
     def on_quit(self):
         self.destroy()
 
-        self.parent.deiconify()  # show root window
+        self.parent.show()  # show root window

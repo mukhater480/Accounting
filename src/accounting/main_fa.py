@@ -105,14 +105,14 @@ class MainFa:
         self.hide()  # hide this window
 
         from lang_fa import LangFa
-        lang = LangFa(self.root)  # show language window
+        lang = LangFa(self)  # show language window
         lang.root.focus_force()  # focus on languages window
 
     def info_window(self, event):
         self.hide()  # hide this window
 
         from app_info_fa import AppInfoFa
-        app_info = AppInfoFa(self.root)  # show app information window
+        app_info = AppInfoFa(self)  # show app information window
         app_info.root.focus_force()  # focus on app information window
 
     def show(self):

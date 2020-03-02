@@ -103,14 +103,14 @@ class Main:
         self.hide()  # hide this window
 
         from lang import Lang
-        lang = Lang(self.root)  # show language window
+        lang = Lang(self)  # show language window
         lang.root.focus_force()  # focus on languages window
 
     def info_window(self, event):
         self.hide()  # hide this window
 
         from app_info import AppInfo
-        app_info = AppInfo(self.root)  # show app information window
+        app_info = AppInfo(self)  # show app information window
         app_info.root.focus_force()  # focus on app information window
 
     def show(self):
