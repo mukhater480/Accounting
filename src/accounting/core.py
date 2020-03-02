@@ -1,3 +1,6 @@
+# Accounting Program Created by Aryan Badiee (https://www.github.com/aryanbadiee)
+# MIT License
+
 # tkinter:
 import tkinter as tk
 
@@ -33,7 +36,7 @@ if __name__ == "__main__":
         else:
             main_window = Main()
 
-        time.sleep(2)  # do something
+        time.sleep(2)  # wait PLZ!!!
 
         preview_window.destroy()  # delete preview window
 

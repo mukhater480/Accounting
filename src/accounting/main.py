@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.font as tk_font
 from PIL import Image, ImageTk
 import time
+import _thread
 
 
 class Main:
@@ -52,6 +53,9 @@ class Main:
         label_img = tk.Label(self.root, image=img)
         label_img.image = img
         label_img.pack()
+
+        # timer for hiding cursor after 3 seconds(like player!):
+        _thread.start_new_thread(timer, (label_img, ))
 
         # buttons:
 
@@ -122,3 +126,32 @@ class Main:
         self.destroy()
         import sys
         sys.exit(3)
+
+
+# *** this part for hiding the cursor after 3 seconds of no movement ***
+
+def timer(widget):  # widget is tk.Label
+    while 1:  # infinitive loop
+        time.sleep(0.01)  # 1 / 100 second
+        try:
+            x, y = widget.winfo_pointerxy()
+            hide_cursor(x, y, widget)
+        except Exception as ex:
+            # print(ex)
+            break
+
+
+old_x, old_y = -1, -1  # keeping old position of mouse
+i = 0  # for counting time
+
+
+def hide_cursor(x, y, widget):  # widget is tk.Label
+    global old_x, old_y, i
+    if old_x == x and old_y == y:
+        i += 1
+        if i > 300:  # after 3 seconds hides cursor
+            widget.configure(cursor="none")
+    else:  # if the cursor is moved, the timer will be reset
+        widget.configure(cursor="arrow")
+        i = 0
+        old_x, old_y = x, y
