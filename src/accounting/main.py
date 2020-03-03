@@ -97,7 +97,10 @@ class Main:
 
     def accounting_window(self, event):
         self.hide()  # hide this window
-        pass
+
+        from accounting import Accounting
+        accounting = Accounting(self)  # show accounting window
+        accounting.root.focus_force()  # focus on accounting window
 
     def lang_window(self, event):
         self.hide()  # hide this window

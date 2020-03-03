@@ -4,7 +4,7 @@ import json
 
 
 class LangFa:
-    """ this class for creating language farsi window """
+    """ this class for creating farsi language window """
 
     def __init__(self, parent):
         self.parent = parent  # root window of this window

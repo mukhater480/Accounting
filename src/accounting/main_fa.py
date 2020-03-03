@@ -7,7 +7,7 @@ import _thread
 
 
 class MainFa:
-    """ this class for creating main farsi window """
+    """ this class for creating farsi main window """
 
     image_path = "img/"
 
@@ -99,7 +99,10 @@ class MainFa:
 
     def accounting_window(self, event):
         self.hide()  # hide this window
-        pass
+
+        from accounting_fa import AccountingFa
+        accounting = AccountingFa(self)  # show accounting window
+        accounting.root.focus_force()  # focus on accounting window
 
     def lang_window(self, event):
         self.hide()  # hide this window

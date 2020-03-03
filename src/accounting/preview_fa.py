@@ -3,7 +3,7 @@ import tkinter.font as tk_font
 
 
 class PreviewFa:
-    """ this class for creating preview farsi window """
+    """ this class for creating farsi preview window """
 
     image_path = "img/"
 

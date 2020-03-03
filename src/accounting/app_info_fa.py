@@ -8,7 +8,7 @@ from lang import Lang  # using this class for inheritance
 
 class AppInfoFa(Lang):
     """
-    this class for creating information of application farsi window
+    this class for creating farsi information of application window
     this window extends Lang class
     """
 
