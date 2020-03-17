@@ -1,7 +1,7 @@
 # Accounting
 quick and lightweight app for Accounting. (+ keylogger)
 
-Point:
+Features:
 * quick & lightweight
 * support from multi-thread
 * modern & nice graphic
